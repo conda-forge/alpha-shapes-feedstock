@@ -1,5 +1,5 @@
 {% set name = "alpha-shapes" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/alpha_shapes-{{ version }}.tar.gz
-  sha256: 67533a689f4b34c7f229481756a632f3bb467e73dfad065f598f8ade63509946
+  sha256: e7f913119948b32d250824d3710d23e92b8ba4364cc84f34b5204d694ab938c2
 
 build:
   noarch: python
