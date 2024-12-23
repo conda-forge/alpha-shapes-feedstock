@@ -6,20 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/alpha_shapes-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/alpha_shapes-{{ version }}.tar.gz
   sha256: e7f913119948b32d250824d3710d23e92b8ba4364cc84f34b5204d694ab938c2
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
+    - setuptools
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - numpy
     - shapely
     - matplotlib-base
@@ -31,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/panosz/alpha_shapes
